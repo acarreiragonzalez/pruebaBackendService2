@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from BackendServiceTestService WSDL service -->
+
+  <service name="BackendServiceTest" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://pruebaBackendService2"/>
+      <parameter name="wsdlServiceElement" value="BackendServiceTestService"/>
+      <parameter name="schemaQualified" value="http://pruebaBackendService2"/>
+      <parameter name="wsdlServicePort" value="BackendServiceTest"/>
+      <parameter name="className" value="pruebaBackendService2.BackendServiceTest"/>
+      <parameter name="wsdlPortType" value="BackendServiceTest"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://pruebaBackendService2" xmlns:retNS="http://pruebaBackendService2" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="return1" qname="operNS:return1" returnQName="retNS:return1Return" returnType="rtns:int" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://pruebaBackendService2" xmlns:retNS="http://pruebaBackendService2" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="return2" qname="operNS:return2" returnQName="retNS:return2Return" returnType="rtns:int" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://pruebaBackendService2" xmlns:retNS="http://pruebaBackendService2" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="return3" qname="operNS:return3" returnQName="retNS:return3Return" returnType="rtns:int" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://pruebaBackendService2" xmlns:retNS="http://pruebaBackendService2" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="return4" qname="operNS:return4" returnQName="retNS:return4Return" returnType="rtns:int" soapAction="">
+      </operation>
+      <parameter name="allowedMethods" value="return1 return3 return2 return4"/>
+
+  </service>
+</deployment>
